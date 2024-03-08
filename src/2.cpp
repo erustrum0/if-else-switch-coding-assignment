@@ -1,4 +1,3 @@
-//Outputs user inputted number.
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -11,13 +10,26 @@ int main() {
     cin >> number;
     // We got number, now do hacky magic stuff on it
 
-    if (number == abs(number)) {
-        polarity = true;
-    }
-    if (2%number != 0) {
-        even = true;
-    }
+    // Waaay better than using an if statement
+    polarity = (number == abs(number));
+    even = (2%number != 0);
 
-    if 
+    // Now, output stuff
+    cout << "The number is ";
+    if (polarity) {
+        cout << "positive";
+    }
+    else {
+        cout << "negative";
+    }
+    cout << ".\nIt is also ";
+
+    if (even) {
+        cout << "even.";
+    }
+    else {
+        cout << "odd.";
+    }
+    cout << "\n";
     return 0;
 }
